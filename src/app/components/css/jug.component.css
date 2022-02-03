@@ -1,0 +1,45 @@
+.jug {
+  width: 10rem;
+  height: 22rem;
+  border: 4px solid black;
+  border-radius: 0 0 1.5rem 1.5rem;
+  overflow: hidden;
+  margin: 4rem 0 5rem 0;
+}
+
+.jug .filling {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: height 1s ease;
+  transition: height 1s ease;
+}
+
+.jug .remain {
+  background-color: transparent;
+  -webkit-transition: height 1s ease;
+  transition: height 1s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (min-width: 600px) {
+  .jug {
+    margin: 0;
+  }
+}
+/*# sourceMappingURL=jug.component.css.map */

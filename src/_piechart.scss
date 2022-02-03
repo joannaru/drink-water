@@ -1,0 +1,78 @@
+@import './variables';
+
+$diameter: 15rem;
+$chart-color: $cblue3;
+
+@mixin bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: $diameter;
+  width: $diameter;
+  content: '';
+  border-width: 10px;
+  border-style: solid;
+  border-radius: 50%;
+}
+
+@mixin halfsquare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: $diameter;
+  width: $diameter/2;
+  content: '';
+  background-color: #fff;
+
+}
+
+.piechart {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $diameter;
+  width: $diameter;
+
+  .caption {
+    z-index: 99;
+    font-size: 3rem;
+  }
+
+
+  @for $i from 0 through 50 {
+    &.p-#{$i}:after {
+      @include halfsquare
+    }
+  }
+
+
+  @for $i from 51 through 75 {
+    &.p-#{$i}:after {
+      @include bar;
+      transform: rotate(45deg);
+      border-color: $chart-color transparent transparent white
+    }
+
+  }
+
+  @for $i from 76 through 100 {
+    &.p-#{$i}:after {
+      @include bar;
+      transform: rotate(45deg);
+      border-color: $chart-color $chart-color transparent transparent
+    }
+
+  }
+
+  &:before {
+    @include bar;
+    border-color: transparent transparent $chart-color $chart-color
+  }
+
+  @for $j from 0 through 100 {
+    &.p-#{$j}:before {
+      transform: rotate(($j*(360/100))+45+deg); // + 45 to start half ring at top
+    }
+  }
+}

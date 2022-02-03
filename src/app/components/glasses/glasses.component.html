@@ -1,0 +1,43 @@
+<div class="row h-100">
+  <!-- glasses -->
+  <section class="col-12 col-md-6">
+    <h1 class="text-center">Choose glass</h1>
+    <div class="text-center">
+      <div *ngFor="let glass of glasses | async" class="glass-container">
+        <div class="glass" (click)="chooseGlass(glass)">
+          <div
+            class="water"
+            [ngClass]="{
+              'bg-blue2': !glass.empty,
+              'bg-white': glass.empty
+            }"
+          >
+            <p class="caption">
+              {{ glass.capacity }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- section: jug & chart -->
+  <!-- displaying the Jug only makes sense IF the glasses have been initialized -->
+  <div *ngIf="(glasses | async)?.length != 0" class="col-12 col-md-6">
+    <div class="row h-100">
+      <!-- jug -->
+      <section
+        class="col-12 col-md-6 d-flex justify-content-center align-items-center"
+      >
+        <app-jug #jug></app-jug>
+      </section>
+      <!-- chart -->
+      <section
+        class="col-12 col-md-6 d-flex justify-content-center align-items-center"
+      >
+        <div class="piechart" [ngClass]="'p-' + jug.fillingPercent">
+          <h2 class="caption">{{ jug.fillingPercent }} %</h2>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

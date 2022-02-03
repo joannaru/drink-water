@@ -1,0 +1,74 @@
+<header class="p-3 mb-3 border-bottom">
+  <div
+    class="
+      container
+      d-flex
+      flex-wrap flex-column flex-md-row
+      align-items-center
+      justify-content-center justify-content-lg-start
+    "
+  >
+    <a routerLink="" class="text-dark text-decoration-none mb-1 me-md-5">
+      <i class="fas fa-tint fa-2x app-icon"></i>
+      <span class="fs-4">Drink water</span></a
+    >
+
+    <a
+      routerLink="/glasses"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="link-dark text-decoration-none me-md-5"
+      ><span class="fs-6">Start</span></a
+    >
+    <a
+      routerLink="/info"
+      routerLinkActive="active"
+      class="d-flex link-dark text-decoration-none"
+      ><span class="fs-6">About</span></a
+    >
+  </div>
+</header>
+
+<main class="main">
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</main>
+
+<footer class="pt-4 my-5 pt-md-5 border-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md">
+        <small class="d-block mb-3 text-muted">Joanna Rudak</small>
+      </div>
+      <div class="col-6 col-md">
+        <p class="h5">Framework</p>
+        <ul class="list-unstyled text-small">
+          <li>
+            <a class="text-muted" href="https://angular.io/">Angular 12.2.10</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <p class="h5">Programming language</p>
+        <ul class="list-unstyled text-small">
+          <li>
+            <a class="text-muted" href="https://www.typescriptlang.org/"
+              >TypeScript</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <p class="h5">CSS Library</p>
+        <ul class="list-unstyled text-small">
+          <li>
+            <a class="text-muted" href="https://getbootstrap.com/"
+              >Bootstrap 5.1.3</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,36 @@
+$jugHeight: 22rem;
+
+.jug {
+  width: 10rem;
+  height: $jugHeight;
+  border: 4px solid black;
+  border-radius: 0 0 1.5rem 1.5rem;
+  overflow: hidden;
+  margin: 4rem 0 5rem 0;
+
+
+  .filling {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: height 1s ease;
+  }
+
+  .remain {
+    background-color: transparent;
+    transition: height 1s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+
+
+  .jug {
+    margin: 0;
+  }
+
+}

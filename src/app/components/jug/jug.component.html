@@ -1,0 +1,12 @@
+<div class="jug">
+  <div class="remain" [ngStyle]="{ height: jugHeightMax - height + 'rem' }">
+    <p *ngIf="remain > 0">{{ remain }} {{ unit }}</p>
+  </div>
+  <div
+    *ngIf="fillingPercent > 0"
+    class="filling bg-blue2"
+    [ngStyle]="{ height: height + 'rem' }"
+  >
+    <p>{{ total - remain }} {{ unit }}</p>
+  </div>
+</div>
