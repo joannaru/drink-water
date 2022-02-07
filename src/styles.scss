@@ -24,6 +24,9 @@ $theme-colors: ("danger": darkred,
 * {
   font-family: 'Raleway', sans-serif;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 @each $name,
