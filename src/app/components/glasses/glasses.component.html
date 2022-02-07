@@ -21,23 +21,27 @@
     </div>
   </section>
   <!-- section: jug & chart -->
-  <!-- displaying the Jug only makes sense IF the glasses have been initialized -->
-  <div *ngIf="(glasses | async)?.length != 0" class="col-12 col-md-6">
-    <div class="row h-100">
-      <!-- jug -->
-      <section
-        class="col-12 col-md-6 d-flex justify-content-center align-items-center"
-      >
-        <app-jug #jug></app-jug>
-      </section>
-      <!-- chart -->
-      <section
-        class="col-12 col-md-6 d-flex justify-content-center align-items-center"
-      >
-        <div class="piechart" [ngClass]="'p-' + jug.fillingPercent">
-          <h2 class="caption">{{ jug.fillingPercent }} %</h2>
-        </div>
-      </section>
+  <!-- displaying the Jug & chart only makes sense IF the glasses have been initialized -->
+  <ng-container *ngIf="(glasses | async)?.length != 0">
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="row h-100">
+        <!-- jug -->
+        <section class="d-flex justify-content-center align-items-center">
+          <app-jug #jug></app-jug>
+        </section>
+      </div>
     </div>
-  </div>
+    <div class="col-12 col-lg-3">
+      <div class="row h-100">
+        <!-- chart -->
+        <section
+          class="section-chart d-flex justify-content-center align-items-center"
+        >
+          <div class="piechart" [ngClass]="'p-' + jug.fillingPercent">
+            <h2 class="caption">{{ jug.fillingPercent }} %</h2>
+          </div>
+        </section>
+      </div>
+    </div>
+  </ng-container>
 </div>
