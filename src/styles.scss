@@ -1,8 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import './variables';
-@import './piechart';
-
-@import 'variables';
+@import './scss/variables';
+@import './scss/piechart';
 
 // THEMING BOOTSTRAP
 $theme-colors: ("danger": darkred,
@@ -10,7 +8,8 @@ $theme-colors: ("danger": darkred,
   "dark":$cblue5,
   "primary":$cblue4,
   "light":$cchampagne,
-  "warning":darkorange);
+  "warning":darkorange
+  );
 
 
 .btn:focus {
